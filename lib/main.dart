@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_api/Authentication/LoginPage/login.dart';
 import 'package:flutter/services.dart';
+import 'package:pet_api/Authentication/signUp/signUp.dart';
 import 'package:pet_api/Screen/HomePage/HomePage.dart';
 
 void main() async {
@@ -67,9 +68,10 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: FirebaseAuth.instance.currentUser != null
-            ? HomePage()
-            : LoginPage());
+        home:
+            FirebaseAuth.instance.currentUser != null ? HomePage() : LoginPage()
+        // : SignUp(),
+        );
     // TempScreen());
   }
 }
